@@ -1,0 +1,23 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "generates html page with all team members info",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melissabcadena/team-profile-generator.git"
+  },
+  "keywords": [
+    "team",
+    "generator"
+  ],
+  "author": "Melissa Cadena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melissabcadena/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/melissabcadena/team-profile-generator#readme"
+}
