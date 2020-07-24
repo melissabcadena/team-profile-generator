@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/melissabcadena/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/melissabcadena/team-profile-generator#readme"
+  "homepage": "https://github.com/melissabcadena/team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
 }
