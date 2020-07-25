@@ -8,11 +8,11 @@ test('creates employee object', () => {
     expect(employee.email).toEqual(expect.any(String));
 })
 
-// test('get name method will return string', () => {
-//     const employee = new Employee('James', 1, 'test@test.com');
+test('get name method will return string', () => {
+    const employee = new Employee('James', 1, 'test@test.com');
 
-//     expect(employee.getName()).toEqual(expect.any(String));
-// })
+    expect(employee.getName()).toEqual(expect.any(String));
+})
 
 test('get employee ID returns number', () => {
     const employee = new Employee('James', 1, 'test@test.com');
@@ -30,12 +30,4 @@ test('getRole returns class name', () => {
     const employee = new Employee('James', 1, 'test@test.com');
 
     expect(employee.getRole()).toBe('Employee')
-})
-
-test('set name via constructor argument', () => {
-    const name = "James";
-    const employee = new Employee(name);
-
-    expect(employee.name).toBe(name);
-
 })
