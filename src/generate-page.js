@@ -10,7 +10,7 @@ const generateTeamHTML = team => {
         
         return `
         <div class="card" style="width: 18rem;">
-            <div class="card-header">
+            <div class="card-header bg-danger">
                 Manager
             </div>
             <ul class="list-group list-group-flush">
@@ -32,7 +32,7 @@ const generateTeamHTML = team => {
     const engineerHTML = engineer => {
         return `
         <div class="card" style="width: 18rem;">
-            <div class="card-header">
+            <div class="card-header bg-warning">
                 Engineer
             </div>
             <ul class="list-group list-group-flush">
@@ -54,7 +54,7 @@ const generateTeamHTML = team => {
     const internHTML = intern => {
         return `
         <div class="card" style="width: 18rem;">
-            <div class="card-header">
+            <div class="card-header bg-success">
                 Intern
             </div>
             <ul class="list-group list-group-flush">
@@ -88,7 +88,7 @@ const generateEntireHTML = team => {
   
     <body>
 
-    <h1 class="bg-dark navbar navbar-dark sticky-top text-light">My Team</h1>
+    <h1 class="bg-primary navbar navbar-dark sticky-top text-light">My Team</h1>
 
     <div class="container">
         <div class="row">
