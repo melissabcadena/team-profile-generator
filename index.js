@@ -2,35 +2,37 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generatePage = require('./src/generate-page.js')
 
 const team = [];
 
 function PromptUser() {
-    
+ 
 }
 
 // get manager's info
 PromptUser.prototype.managerInfo = function() {
+    console.log("Let's build your team!")
     inquirer.prompt([
         {
             type: 'text',
             name: 'name',
-            message: 'What is your name?' 
+            message: "What is the manager's name?"
         },
         {
             type: 'text',
             name: 'id',
-            message: 'What is your employee ID?' 
+            message: "What is the manager's ID?"
         },
         {
             type: 'text',
             name: 'email',
-            message: 'What is your email?' 
+            message: 'What is their email?' 
         },
         {
             type: 'text',
             name: 'officeNumber',
-            message: 'What is your office number?' 
+            message: 'What is the office number?' 
         }
     ])
     .then(({ name, id, email, officeNumber}) => {
@@ -56,10 +58,15 @@ PromptUser.prototype.menuOptions = function () {
         } else if (action === 'Add Intern') {
             new PromptUser().internInfo()
         } else {
-            new PromptUser().generatePage();
+            generatePage(team)
+                .then(response => {
+                    console.log(response.message);
+                })
+            }
         }
-    })
+    )
 }
+
 
 // get engineer's info
 PromptUser.prototype.engineerInfo = function () {
@@ -125,9 +132,7 @@ PromptUser.prototype.internInfo = function () {
     })
 }
 
-// finish building team function and generate page
-// PromptUser.prototype.generatePage() {
 
-// }
 
-new PromptUser().managerInfo();
+
+new PromptUser().managerInfo()
