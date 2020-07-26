@@ -14,10 +14,10 @@ const generateTeamHTML = team => {
                 Manager
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${manager.getName()}</li>
+                <li class="list-group-item">Name: ${manager.getName()}</li>
                 <li class="list-group-item">ID: ${manager.getID()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>                
-                <li class="list-group-item">School: ${manager.officeNumber}</li>
+                <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
             </ul>
             </div>
         `
@@ -36,7 +36,7 @@ const generateTeamHTML = team => {
                 Engineer
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${engineer.getName()}</li>
+                <li class="list-group-item">Name: ${engineer.getName()}</li>
                 <li class="list-group-item">ID: ${engineer.getID()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
                 <li class="list-group-item">GitHub Username: <a target="_blank" href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
@@ -49,6 +49,8 @@ const generateTeamHTML = team => {
     entireTeamHTML.push(team.filter(employee => employee.getRole() === "Engineer")
         .map(engineer => engineerHTML(engineer)))
 
+
+    // create Intern HTML and push any Interns to funciton
     const internHTML = intern => {
         return `
         <div class="card" style="width: 18rem;">
@@ -56,7 +58,7 @@ const generateTeamHTML = team => {
                 Intern
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${intern.getName()}</li>
+                <li class="list-group-item">Name: ${intern.getName()}</li>
                 <li class="list-group-item">ID: ${intern.getID()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>                <li class="list-group-item">School: ${intern.getSchool()}</li>
             </ul>
@@ -67,9 +69,11 @@ const generateTeamHTML = team => {
     entireTeamHTML.push(team.filter(employee => employee.getRole() === "Intern")
         .map(intern => internHTML(intern)))
 
+    // return all HTMl put together into one string
     return entireTeamHTML.join('')
 } 
 
+// create entire page of HTML and call generateTeamHTML function within the template literal
 const generateEntireHTML = team => {
     return `
     <!DOCTYPE html> 
@@ -100,6 +104,7 @@ const generateEntireHTML = team => {
     `;
 };
 
+// create file
 module.exports = team => {
     return new Promise((resolve, reject) => {
         fs.writeFile('./dist/index.html', generateEntireHTML(team), err => {

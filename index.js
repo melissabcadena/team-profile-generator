@@ -4,13 +4,15 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const generatePage = require('./src/generate-page.js')
 
+// create team array to push all team members to 
+// this will be sent through to generate the html page
 const team = [];
 
 function PromptUser() {
- 
+    
 }
 
-// get manager's info
+// prompt for manager's info
 PromptUser.prototype.managerInfo = function() {
     console.log("Let's build your team!")
     inquirer.prompt([
@@ -63,10 +65,10 @@ PromptUser.prototype.managerInfo = function() {
             }
         }
     ])
+    // push this manger info to team array and push to next function 
     .then(({ name, id, email, officeNumber}) => {
         manager = new Manager(name, id, email, officeNumber);
         team.push(manager);
-        console.log(team)
         this.menuOptions();
     })
     
@@ -149,9 +151,9 @@ PromptUser.prototype.engineerInfo = function () {
         }
     ])
     .then(({name, id, email, githubName}) => {
+        // push info to team array and send back to menu
         engineer = new Engineer(name, id, email, githubName);
         team.push(engineer);
-        console.log(team)
         this.menuOptions();
     })
 }
@@ -208,10 +210,10 @@ PromptUser.prototype.internInfo = function () {
             }
         }
     ])
+    // push intern info to team array and sent back to menu 
     .then(({name, id, email, school}) => {
         intern = new Intern(name, id, email, school);
         team.push(intern);
-        console.log(team)
         this.menuOptions();
     })
 }
