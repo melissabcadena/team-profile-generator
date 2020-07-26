@@ -30,6 +30,7 @@ To use this application, you will have to clone the code to your own local repo.
 ## Usage
 
 Please see link to walkthrough video below. 
+https://drive.google.com/file/d/1RpzaumlnpuoddJMUvAdFw1fzOrDNN_2A/view
 
 ## Tests
 
