@@ -17,22 +17,50 @@ PromptUser.prototype.managerInfo = function() {
         {
             type: 'text',
             name: 'name',
-            message: "What is the manager's name?"
+            message: "What is the manager's name?",
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response.');
+                }
+            }
         },
         {
             type: 'text',
             name: 'id',
-            message: "What is the manager's ID?"
+            message: "What is the manager's ID?",
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response');
+                }
+            }
         },
         {
             type: 'text',
             name: 'email',
-            message: 'What is their email?' 
+            message: 'What is their email?',
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response');
+                }
+            }
         },
         {
             type: 'text',
             name: 'officeNumber',
-            message: 'What is the office number?' 
+            message: 'What is the office number?', 
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response');
+                }
+            }
         }
     ])
     .then(({ name, id, email, officeNumber}) => {
@@ -74,22 +102,50 @@ PromptUser.prototype.engineerInfo = function () {
         {
             type: 'text',
             name: 'name',
-            message: "What is the engineer's name?"
+            message: "What is the engineer's name?",
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response.');
+                }
+            }
         },
         {
             type: 'text',
             name: 'id',
-            message: 'What is their employee ID?' 
+            message: 'What is their employee ID?', 
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response.');
+                }
+            }
         },
         {
             type: 'text',
             name: 'email',
-            message: 'What is their email?' 
+            message: 'What is their email?',
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response.');
+                }
+            }
         },
         {
             type: 'text',
             name: 'githubName',
-            message: 'What is their Github name?' 
+            message: 'What is their Github name?',
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response.');
+                }
+            }
         }
     ])
     .then(({name, id, email, githubName}) => {
@@ -106,22 +162,50 @@ PromptUser.prototype.internInfo = function () {
         {
             type: 'text',
             name: 'name',
-            message: "What is the intern's name?" 
+            message: "What is the intern's name?",
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response.');
+                }
+            }
         },
         {
             type: 'text',
             name: 'id',
-            message: 'What is their employee ID?' 
+            message: 'What is their employee ID?',
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response.');
+                }
+            }
         },
         {
             type: 'text',
             name: 'email',
-            message: 'What is their email?' 
+            message: 'What is their email?',
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response.');
+                }
+            }
         },
         {
             type: 'text',
             name: 'school',
-            message: "What is the intern's school name?"
+            message: "What is the intern's school name?",
+            validate: userInput => {
+                if (userInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid response.');
+                }
+            }
         }
     ])
     .then(({name, id, email, school}) => {
